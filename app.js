@@ -60,16 +60,23 @@ tg.ready();
     }
 
     function updateCart() {
-        const totalQty = products.reduce((sum, p) => sum + p.qty, 0);
-        const badge = document.getElementById("cartCount");
+    const totalQty = products.reduce((sum, p) => sum + p.qty, 0);
+    const totalPrice = products.reduce((sum, p) => sum + p.qty * p.price, 0);
 
-        if (totalQty > 0) {
-            badge.innerText = totalQty;
-            badge.style.display = "inline-block";
-        } else {
-            badge.style.display = "none";
-        }
+    const badge = document.getElementById("cartCount");
+
+    if (totalQty > 0) {
+        badge.innerText = totalQty;
+        badge.style.display = "inline-block";
+
+        tg.MainButton.setText(`Оформить заказ · ${totalPrice} ₽`);
+        tg.MainButton.show();
+    } else {
+        badge.style.display = "none";
+        tg.MainButton.hide();
     }
+}
+
 
     renderProducts();
 });
