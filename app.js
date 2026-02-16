@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const tg = window.Telegram.WebApp;
 tg.ready();
+tg.MainButton.hide();
 
     const products = [
         {
@@ -88,3 +89,4 @@ tg.MainButton.onClick(() => {
     tg.sendData(JSON.stringify(order));
 });
 
+renderProducts();
