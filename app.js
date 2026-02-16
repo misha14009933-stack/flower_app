@@ -76,7 +76,15 @@ tg.ready();
         tg.MainButton.hide();
     }
 }
+tg.MainButton.onClick(() => {
+    const order = products
+        .filter(p => p.qty > 0)
+        .map(p => ({
+            name: p.name,
+            qty: p.qty,
+            price: p.price
+        }));
 
-
-    renderProducts();
+    tg.sendData(JSON.stringify(order));
 });
+
