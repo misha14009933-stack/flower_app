@@ -5,7 +5,7 @@
     <title>Цветы Лета.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Telegram -->
+    <!-- Telegram WebApp -->
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
     <link rel="stylesheet" href="style.css">
@@ -18,28 +18,35 @@
     <div class="city">📍 Пермь</div>
 </header>
 
-<!-- CATEGORIES -->
-<div class="categories">
-    <button class="cat active">Все</button>
-    <button class="cat">Сеты</button>
-    <button class="cat">Гвоздики</button>
-    <button class="cat">Экзотика</button>
-    <button class="cat">Ранункулюсы</button>
-    <button class="cat">Хризантемы</button>
-</div>
+<!-- MAIN CONTENT -->
+<main class="content">
 
-<!-- FILTERS -->
-<div class="filters">
-    <span>Розовые</span>
-    <span>Синие</span>
-    <span>Фиолетовые</span>
-    <span>Белые</span>
-    <span>Зелёные</span>
-    <span>Красные</span>
-</div>
+    <!-- CATEGORIES -->
+    <div class="categories">
+        <button class="cat active">Все</button>
+        <button class="cat">Сеты</button>
+        <button class="cat">Гвоздики</button>
+        <button class="cat">Экзотика</button>
+        <button class="cat">Ранункулюсы</button>
+        <button class="cat">Хризантемы</button>
+    </div>
 
-<!-- PRODUCTS -->
+    <!-- FILTERS -->
+    <div class="filters">
+        <span>Розовые</span>
+        <span>Синие</span>
+        <span>Фиолетовые</span>
+        <span>Белые</span>
+        <span>Зелёные</span>
+        <span>Красные</span>
+    </div>
+
+    <!-- PRODUCTS -->
     <div class="products"></div>
+
+</main>
+
+<!-- BOTTOM MENU -->
 <nav class="bottom">
     <div>☰ Меню</div>
 
@@ -52,9 +59,8 @@
     <div>ℹ️ О проекте</div>
 </nav>
 
+<!-- JS -->
 <script src="app.js"></script>
 
-
-
-
-
+</body>
+</html>
