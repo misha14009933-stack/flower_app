@@ -133,3 +133,19 @@ body {
     font-weight: bold;
     display: none;
 }
+
+.cart {
+    position: relative;
+}
+
+.badge-cart {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background: red;
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    display: none;
+}
