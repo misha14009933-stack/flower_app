@@ -149,3 +149,15 @@ body {
     border-radius: 50%;
     display: none;
 }
+
+.content {
+    padding-bottom: 90px; /* место под нижнее меню */
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 12px;
+}
+
