@@ -53,17 +53,15 @@ function changeQty(id, delta) {
 
 function updateCart() {
     const totalQty = products.reduce((sum, p) => sum + p.qty, 0);
-    const totalPrice = products.reduce((sum, p) => sum + p.qty * p.price, 0);
-
-    const cartBtn = document.querySelector(".cart-btn");
-    if (!cartBtn) return;
+    const badge = document.getElementById("cartCount");
 
     if (totalQty > 0) {
-        cartBtn.innerText = `🛒 ${totalPrice} ₽`;
-        cartBtn.style.display = "block";
+        badge.innerText = totalQty;
+        badge.style.display = "inline-block";
     } else {
-        cartBtn.style.display = "none";
+        badge.style.display = "none";
     }
 }
+
 
 renderProducts();
