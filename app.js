@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    const tg = window.Telegram.WebApp;
+tg.ready();
+
     const products = [
         {
             id: 1,
