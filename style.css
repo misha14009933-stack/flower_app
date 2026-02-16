@@ -5,120 +5,119 @@
 
 body {
     margin: 0;
-    background: #f5f5f5;
+    background: #f7f7f7;
     padding-bottom: 70px;
 }
 
 /* HEADER */
 .header {
-    background: #b6f200;
-    padding: 12px 16px;
+    background: #b6ff00;
+    padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.logo {
     font-weight: bold;
-    font-size: 20px;
-}
-
-.city {
-    font-size: 14px;
 }
 
 /* CATEGORIES */
 .categories {
     display: flex;
-    overflow-x: auto;
     gap: 8px;
     padding: 10px;
-    background: white;
+    overflow-x: auto;
 }
 
-.categories button {
-    padding: 6px 12px;
-    border-radius: 20px;
-    border: 1px solid #ddd;
+.cat {
+    border: 1px solid #ccc;
     background: white;
+    padding: 8px 12px;
+    border-radius: 20px;
     white-space: nowrap;
 }
 
-.categories .active {
-    background: #b6f200;
-    border-color: #b6f200;
+.cat.active {
+    background: #b6ff00;
 }
 
 /* FILTERS */
 .filters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
     padding: 10px;
-    background: white;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
 }
 
 .filters span {
-    padding: 5px 10px;
-    border-radius: 16px;
     border: 1px solid #ddd;
-    font-size: 13px;
+    padding: 6px 10px;
+    border-radius: 16px;
+    background: white;
+    font-size: 14px;
 }
 
-/* CATALOG */
-.catalog {
-    padding: 10px;
+/* PRODUCTS */
+.products {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
+    padding: 10px;
 }
 
-.product {
+.card {
     background: white;
     border-radius: 12px;
-    padding: 8px;
+    padding: 10px;
     position: relative;
 }
 
-.product img {
+.card img {
     width: 100%;
     border-radius: 10px;
-    height: 160px;
-    object-fit: cover;
 }
 
 .badge {
     position: absolute;
-    top: 8px;
-    left: 8px;
-    background: #2f80ed;
-    color: white;
-    font-size: 11px;
-    padding: 3px 6px;
-    border-radius: 8px;
+    top: 10px;
+    left: 10px;
+    background: #e6f7ff;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
 }
 
 .title {
-    margin-top: 6px;
-    font-size: 14px;
+    font-weight: bold;
+    margin-top: 8px;
 }
 
 .price {
-    font-weight: bold;
-    margin-top: 4px;
+    margin: 4px 0;
 }
 
-/* BOTTOM NAV */
-.bottom-nav {
+/* CONTROLS */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.controls button {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background: #eee;
+    font-size: 18px;
+}
+
+/* BOTTOM MENU */
+.bottom {
     position: fixed;
     bottom: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
+    width: 100%;
     background: white;
+    border-top: 1px solid #ddd;
     display: flex;
     justify-content: space-around;
-    align-items: center;
-    border-top: 1px solid #ddd;
-    font-size: 12px;
+    padding: 10px 0;
 }
