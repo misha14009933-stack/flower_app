@@ -2,37 +2,64 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Каталог цветов</title>
+    <title>BUNCH.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>🌸 Каталог букетов</h1>
+<!-- HEADER -->
+<header class="header">
+    <div class="logo">BUNCH.</div>
+    <div class="city">📍 Казань</div>
+</header>
 
-<div class="catalog">
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="Розы">
-        <h3>Букет роз</h3>
-        <p class="price">2 500 ₽</p>
-        <button>Заказать</button>
-    </div>
-
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1524594154908-edd4621c3d5f" alt="Тюльпаны">
-        <h3>Тюльпаны</h3>
-        <p class="price">1 800 ₽</p>
-        <button>Заказать</button>
-    </div>
-
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946" alt="Пионы">
-        <h3>Пионы</h3>
-        <p class="price">3 200 ₽</p>
-        <button>Заказать</button>
-    </div>
+<!-- CATEGORIES -->
+<div class="categories">
+    <button class="active">Все</button>
+    <button>Сеты</button>
+    <button>Гвоздики</button>
+    <button>Экзотика</button>
+    <button>Ранункулюсы</button>
+    <button>Хризантемы</button>
 </div>
- 
+
+<!-- FILTERS -->
+<div class="filters">
+    <span>Розовые</span>
+    <span>Синие</span>
+    <span>Фиолетовые</span>
+    <span>Белые</span>
+    <span>Зелёные</span>
+    <span>Красные</span>
+</div>
+
+<!-- PRODUCTS -->
+<main class="catalog">
+
+    <div class="product">
+        <div class="badge">Доставим завтра</div>
+        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
+        <div class="title">Розовая охапка</div>
+        <div class="price">5 500 ₽</div>
+    </div>
+
+    <div class="product">
+        <div class="badge">Доставим завтра</div>
+        <img src="https://images.unsplash.com/photo-1524594154908-edd4621c3d5f">
+        <div class="title">Гвоздика кустовая</div>
+        <div class="price">2 000 ₽</div>
+    </div>
+
+</main>
+
+<!-- BOTTOM NAV -->
+<nav class="bottom-nav">
+    <div>☰<br>Меню</div>
+    <div>🛒<br>Корзина</div>
+    <div>👤<br>Профиль</div>
+    <div>ℹ️<br>О проекте</div>
+</nav>
+
 </body>
 </html>
-
