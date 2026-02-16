@@ -121,3 +121,15 @@ body {
     justify-content: space-around;
     padding: 10px 0;
 }
+
+.cart-btn {
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #b6ff00;
+    padding: 14px 24px;
+    border-radius: 30px;
+    font-weight: bold;
+    display: none;
+}
