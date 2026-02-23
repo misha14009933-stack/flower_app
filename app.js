@@ -41,13 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const card = document.createElement("div");
 
             // временный forced-style (чтобы ТОЧНО было видно)
-            card.style.cssText = `
-    border: 2px solid red;
-    height: 220px;
-    background: #fff;
-    padding: 8px;
-    margin-bottom: 12px;
-`;
+    card.className = "card";
 
             card.innerHTML = `
                 <div class="badge">Доставим завтра</div>
