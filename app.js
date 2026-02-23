@@ -28,7 +28,11 @@ tg.MainButton.hide();
 
         products.forEach(product => {
             const card = document.createElement("div");
-            card.className = "card";
+            card.style.cssText = `
+    border: 2px solid red;
+    height: 200px;
+    background: #fff;
+`;
 
             card.innerHTML = `
                 <div class="badge">Доставим завтра</div>
