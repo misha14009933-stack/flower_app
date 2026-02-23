@@ -92,3 +92,4 @@ console.log("Рендер товаров");
 console.log(productsContainer);
     
 renderProducts();
+console.log("Карточки:", products.length);
