@@ -88,5 +88,7 @@ tg.MainButton.onClick(() => {
 
     tg.sendData(JSON.stringify(order));
 });
-
+console.log("Рендер товаров");
+console.log(productsContainer);
+    
 renderProducts();
