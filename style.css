@@ -60,7 +60,7 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
-    padding: 10px;
+    padding: 12px;
 }
 
 .card {
@@ -160,4 +160,5 @@ body {
     gap: 12px;
     padding: 12px;
 }
+
 
