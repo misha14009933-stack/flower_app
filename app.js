@@ -42,12 +42,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // временный forced-style (чтобы ТОЧНО было видно)
             card.style.cssText = `
-                border: 2px solid red;
-                height: 220px;
-                background: #fff;
-                padding: 8px;
-                margin-bottom: 12px;
-            `;
+    border: 2px solid red;
+    height: 220px;
+    background: #fff;
+    padding: 8px;
+    margin-bottom: 12px;
+`;
 
             card.innerHTML = `
                 <div class="badge">Доставим завтра</div>
