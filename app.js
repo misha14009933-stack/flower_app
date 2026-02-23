@@ -91,14 +91,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    tg.MainButton.onClick(() => {
-        const order = products
-            .filter(p => p.qty > 0)
-            .map(p => ({
-                name: p.name,
-                qty: p.qty,
-                price: p.price
-            }));
+tg.MainButton.onClick(() => {
+    document.getElementById("orderForm").classList.remove("hidden");
+    tg.MainButton.hide();
+});
 
         tg.sendData(JSON.stringify(order));
     });
@@ -108,3 +104,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     renderProducts();
 });
+document.getElementById("confirmOrder").onclick = () => {
+
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const comment = document.getElementById("comment").value.trim();
+
+    if (!name || !phone) {
+        alert("Введите имя и телефон");
+        return;
+    }
+
+    const order = {
+        customer: { name, phone, comment },
+        items: products.filter(p => p.qty > 0),
+        total: products.reduce((s, p) => s + p.qty * p.price, 0)
+    };
+
+    tg.sendData(JSON.stringify(order));
+};
