@@ -81,24 +81,27 @@ document.addEventListener("DOMContentLoaded", () => {
         tg.MainButton.hide();
     });
 
-    document.getElementById("confirmOrder").onclick = () => {
-        const name = document.getElementById("name").value.trim();
-        const phone = document.getElementById("phone").value.trim();
-        const comment = document.getElementById("comment").value.trim();
+document.getElementById("confirmOrder").onclick = () => {
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const comment = document.getElementById("comment").value.trim();
 
-        if (!name || !phone) {
-            alert("Введите имя и телефон");
-            return;
-        }
+    if (!name || !phone) {
+        alert("Введите имя и телефон");
+        return;
+    }
 
-        const order = {
-            customer: { name, phone, comment },
-            items: products.filter(p => p.qty > 0),
-            total: products.reduce((s, p) => s + p.qty * p.price, 0)
-        };
-
-        tg.sendData(JSON.stringify(order));
+    const order = {
+        customer: { name, phone, comment },
+        items: products.filter(p => p.qty > 0),
+        total: products.reduce((s, p) => s + p.qty * p.price, 0)
     };
 
+    tg.sendData(JSON.stringify(order));
+
+    // ✅ UI после отправки
+    document.getElementById("orderForm").classList.add("hidden");
+    document.getElementById("orderSuccess").classList.remove("hidden");
+};
     renderProducts();
 });
