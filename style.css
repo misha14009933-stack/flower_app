@@ -197,10 +197,35 @@ body {
     border-radius: 10px;
     font-size: 18px;
 }
+.order-success {
+    position: fixed;
+    inset: 0;
+    background: #fff;
+    z-index: 2000;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
+.order-success h2 {
+    margin-bottom: 12px;
+}
+
+.order-success button {
+    margin-top: 20px;
+    padding: 14px 20px;
+    background: #b6ff00;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+}
 .hidden {
     display: none;
 }
+
 
 
 
