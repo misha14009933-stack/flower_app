@@ -167,6 +167,40 @@ body {
     gap: 12px;
     padding: 12px;
 }
+.order-form {
+    position: fixed;
+    inset: 0;
+    background: #fff;
+    z-index: 1000;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.order-form h2 {
+    margin-bottom: 16px;
+}
+
+.order-form input,
+.order-form textarea {
+    margin-bottom: 12px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.order-form button {
+    margin-top: auto;
+    padding: 14px;
+    background: #e91e63;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+.hidden {
+    display: none;
+}
 
 
 
