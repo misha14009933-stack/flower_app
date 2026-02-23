@@ -21,31 +21,18 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     ];
 
-    // 🔒 Гарантируем контейнер
-    let productsContainer = document.querySelector(".products");
-
-    if (!productsContainer) {
-        console.warn("Контейнер .products не найден — создаю вручную");
-
-        productsContainer = document.createElement("div");
-        productsContainer.className = "products";
-
-        const content = document.querySelector(".content") || document.body;
-        content.appendChild(productsContainer);
-    }
+    const productsContainer = document.querySelector(".products");
 
     function renderProducts() {
         productsContainer.innerHTML = "";
 
         products.forEach(product => {
             const card = document.createElement("div");
-
-            // временный forced-style (чтобы ТОЧНО было видно)
-    card.className = "card";
+            card.className = "card";
 
             card.innerHTML = `
                 <div class="badge">Доставим завтра</div>
-                <img src="${product.image}" style="width:100%;height:100px;object-fit:cover">
+                <img src="${product.image}">
                 <div class="title">${product.name}</div>
                 <div class="price">${product.price} ₽</div>
                 <div class="controls">
@@ -74,15 +61,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function updateCart() {
-        const totalQty = products.reduce((sum, p) => sum + p.qty, 0);
-        const totalPrice = products.reduce((sum, p) => sum + p.qty * p.price, 0);
-
+        const totalQty = products.reduce((s, p) => s + p.qty, 0);
+        const totalPrice = products.reduce((s, p) => s + p.qty * p.price, 0);
         const badge = document.getElementById("cartCount");
 
         if (totalQty > 0) {
             badge.innerText = totalQty;
             badge.style.display = "inline-block";
-
             tg.MainButton.setText(`Оформить заказ · ${totalPrice} ₽`);
             tg.MainButton.show();
         } else {
@@ -91,35 +76,29 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-tg.MainButton.onClick(() => {
-    document.getElementById("orderForm").classList.remove("hidden");
-    tg.MainButton.hide();
-});
-
-        tg.sendData(JSON.stringify(order));
+    tg.MainButton.onClick(() => {
+        document.getElementById("orderForm").classList.remove("hidden");
+        tg.MainButton.hide();
     });
 
-    console.log("Контейнер:", productsContainer);
-    console.log("Карточки:", products.length);
+    document.getElementById("confirmOrder").onclick = () => {
+        const name = document.getElementById("name").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const comment = document.getElementById("comment").value.trim();
+
+        if (!name || !phone) {
+            alert("Введите имя и телефон");
+            return;
+        }
+
+        const order = {
+            customer: { name, phone, comment },
+            items: products.filter(p => p.qty > 0),
+            total: products.reduce((s, p) => s + p.qty * p.price, 0)
+        };
+
+        tg.sendData(JSON.stringify(order));
+    };
 
     renderProducts();
 });
-document.getElementById("confirmOrder").onclick = () => {
-
-    const name = document.getElementById("name").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const comment = document.getElementById("comment").value.trim();
-
-    if (!name || !phone) {
-        alert("Введите имя и телефон");
-        return;
-    }
-
-    const order = {
-        customer: { name, phone, comment },
-        items: products.filter(p => p.qty > 0),
-        total: products.reduce((s, p) => s + p.qty * p.price, 0)
-    };
-
-    tg.sendData(JSON.stringify(order));
-};
